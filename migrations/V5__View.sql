@@ -9,5 +9,5 @@ INNER JOIN
     Income i ON u.user_id = i.user_id
 GROUP BY
     u.user_id, u.user_name;
+GO
 
- 

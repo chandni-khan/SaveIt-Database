@@ -23,3 +23,16 @@ BEGIN
    RETURN ISNULL(@totalIncome, 0);
 END;
 GO
+
+CREATE FUNCTION GetTotalBudget(@userId INT)
+RETURNS DECIMAL(18,2)
+AS
+BEGIN
+   DECLARE @totalBudget DECIMAL(18,2);
+   
+   SELECT @totalBudget = SUM(amount)
+   FROM Budget
+   WHERE user_id = @userId and month(start_date)=month(end_date) and year(start_date)=year(end_date);
+   RETURN ISNULL(@totalBudget, 0);
+END;
+GO
