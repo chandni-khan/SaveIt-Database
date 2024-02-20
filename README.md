@@ -53,11 +53,11 @@ When user successfully created a budget , they will be able to add expenses
 <h2>Step2: Flow chart</h2>
 ![img]()
 
-<h2>Step2: Diagram</h2>
+<h2>Step3: Diagram</h2>
 ![img]()
 
 
-<h2>Terraform</h2>
+<h2>Step:4 Terraform</h2>
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Follow these steps to install Terraform on your local machine:
 <ol><li>Download the appropriate Terraform binary for your operating system from the <a href="https://developer.hashicorp.com/terraform/install">https://developer.hashicorp.com/terraform/install.</a></li>
 <li>Extract the downloaded archive to a directory included in your system's PATH.</li>
@@ -68,18 +68,22 @@ Terraform is a tool for building, changing, and versioning infrastructure safely
 # Terraform Git Repository
  
 This repository contains Terraform code to provision and manage infrastructure on [your cloud provider]. It simplifies the deployment process and ensures infrastructure as code principles are followed.
+
+<h2>Step5: Flyway Installation</h2>
+Flyway is an open-source database-independent library for tracking, managing, and applying database changes. Flyway is an open-source database migration tool that helps you version control your database schema and apply changes to it over time. Here are the general steps to install Flyway:
+<ol><li>Visit the official Flyway website at <a href="https://flywaydb.org/">https://flywaydb.org/.</a></li>
+ <li>Navigate to the "Downloads" section.</li>
+ <li>Download the version of Flyway that corresponds to your operating system (Windows, macOS, or Linux).</li>
+ <li>Flyway can be run from any directory, but you may want to add its location to your system's PATH environment variable for convenience.</li>
+ <li>Verify Installation: flyway -v.</li>
+ <li>Database Configuration: Before using Flyway, you need to configure it for your specific database. Create a configuration file named flyway.conf or use command-line options.</li>
+</ol>
+For reference visit <a href=" https://flywaydb.org/documentation"> https://flywaydb.org/documentation.</a>
  
 ## Getting Started
  
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
- 
-### Prerequisites
- 
-Before you begin, ensure you have the following tools installed:
- 
-- [Terraform](https://www.terraform.io/downloads.html)
- 
- 
+
 <h2>1.  Initialize Terraform:</h2>
 Run the following command to initialize Terraform:
  
@@ -128,36 +132,42 @@ This GitHub Actions workflow automates database migrations using Flyway, enablin
 ## Workflow Script
 ```yaml
 name: flyway
+
 on:
   push:
-    branches:
+    branches: 
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     env:
       FLYWAY_USER: ${{ secrets.DB_BUILD_USERNAME }}
       FLYWAY_PASSWORD: ${{ secrets.DB_BUILD_PASSWORD }}
       FLYWAY_URL: ${{ secrets.DB_BUILD_URL }}
       FLYWAY_CLEAN_DISABLED: false
       FLYWAY_LOCATIONS: "filesystem:./migrations/"
-      FLYWAY_CONFIG_FILES: "filesystem:./conf/flyway.toml"
+      FLYWAY_CONFIG_FILES: "filesystem:flyway.toml"
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+ 
       - name: Setup Flyway CLI
         run: |
           sudo apt update
           sudo apt install -y default-jre
-          wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/7.9.1/flyway-commandline-7.9.1-linux-x64.tar.gz | tar xvz
-          sudo ln -s $(pwd)/flyway-7.9.1/flyway /usr/local/bin/flyway
-      - name: Flyway Repair
+          wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/10.7.2/flyway-commandline-10.7.2-linux-x64.tar.gz | tar xvz
+          sudo ln -s $(pwd)/flyway-10.7.2/flyway /usr/local/bin/flyway
+
+      - name: Flyway repair
         run: |
           flyway repair
- 
-      - name: Flyway Migrate
+          
+      - name: Flyway Migrate 
         run: |
-          flyway migrate \
+          flyway migrate -outOfOrder=true\
              -url="${FLYWAY_URL}" \
             -user="${FLYWAY_USER}" \
             -password="${FLYWAY_PASSWORD}" \
@@ -176,5 +186,5 @@ jobs:
       - `DB_BUILD_URL`: Your database URL.
 4. **Flyway Repair:** Repairs the metadata table if necessary.
 5. **Flyway Migrate:** Executes database migrations using Flyway.
-## Conclusion
-You now have a comprehensive setup covering KindnessKettle, AWS CloudFormation deployment, Flyway installation, and GitHub Actions for automating database migrations, with the added step of creating necessary secrets in GitHub Actions for secure storage of sensitive information.
+
+## Confluence <a href="">visit</a>
