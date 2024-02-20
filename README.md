@@ -96,7 +96,7 @@ Copy code
 # main.tf
  
 provider "aws" {
-  region = "us-east-1" # Update with your desired region
+  region = "eu-west-1" # Update with your desired region
 }
  
 resource "aws_instance" "example_instance" {
