@@ -186,4 +186,4 @@ jobs:
 5. **Flyway Migrate:** Executes database migrations using Flyway.
 
 ## Confluence 
-<ul><li> <a href="">confluence</a></li> </ul>
+<ul><li> <a href="https://teams.microsoft.com/l/message/19:4cadea51-df2d-4196-a8fc-9008a0e2747c_ab40b3f9-1cc2-4c6a-b56d-ba3b143ed285@unq.gbl.spaces/1708415073679?context=%7B%22contextType%22%3A%22chat%22%7D">confluence</a></li> </ul>
