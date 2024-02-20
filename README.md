@@ -186,4 +186,4 @@ jobs:
 5. **Flyway Migrate:** Executes database migrations using Flyway.
 
 ## Confluence 
-<ul><li> <a href="[https://teams.microsoft.com/l/message/19:4cadea51-df2d-4196-a8fc-9008a0e2747c_ab40b3f9-1cc2-4c6a-b56d-ba3b143ed285@unq.gbl.spaces/1708415073679?context=%7B%22contextType%22%3A%22chat%22%7D](https://bbd-nidhirudani.atlassian.net/wiki/spaces/~712020fd6e855c677a4607aa91c7562553b854/pages/98445/Finance+and+Budgeting+app)https://bbd-nidhirudani.atlassian.net/wiki/spaces/~712020fd6e855c677a4607aa91c7562553b854/pages/98445/Finance+and+Budgeting+app">confluence</a></li> </ul>
+<ul><li> <a href="https://bbd-nidhirudani.atlassian.net/wiki/x/jYAB">confluence</a></li> </ul>
