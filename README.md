@@ -1,8 +1,6 @@
 <h1>Finance and Budgeting App</h1>
  <h2>Introduction</h2>
            Building a financial management application that helps users track expenses, set budgets, and generate financial reports. 
-
-![img](https://github.com/Parthvaghela8/BidWheels/blob/main/ERD.png)
  
 <h2>Technology Used : </h2>
  
@@ -51,7 +49,7 @@ When a user did not create a budget, it will show notification => "need a budget
 When user successfully created a budget , they will be able to add expenses  
 
 <h2>Step2: Flow chart</h2>
-![img](https://github.com/chandni-khan/project/blob/main/flowchart.png)
+<img src=https://github.com/chandni-khan/project/blob/main/flowchart.png />
 
 <h2>Step3: Diagram</h2>
 ![img](https://github.com/chandni-khan/project/blob/main/ERD.png)
