@@ -1,4 +1,4 @@
-<h1>Finance and budgeting app</h1>
+<h1>Finance and Budgeting App</h1>
  <h2>Introduction</h2>
            Building a financial management application that helps users track expenses, set budgets, and generate financial reports. 
 
