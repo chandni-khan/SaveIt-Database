@@ -16,7 +16,7 @@ CREATE TABLE [UserId] (
 CREATE TABLE Expense (
    expense_id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
    expense_category VARCHAR(50) NOT NULL,
-   expense_description VARCHAR(255)
+   expense_description VARCHAR(255),
    spend_date DATE NOT NULL,
    amount_spended DECIMAL(18,2) NOT NULL,
    user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
