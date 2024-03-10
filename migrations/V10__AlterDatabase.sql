@@ -25,7 +25,7 @@ CREATE TABLE Expense (
  CREATE TABLE ExpenseCategory (
    expense_category_id INT PRIMARY KEY,
    expense_category_name VARCHAR(50) NOT NULL,
-   expense_description VARCHAR(255),
+   expense_category_description VARCHAR(255),
 );
  
 --Income table
@@ -41,7 +41,7 @@ CREATE TABLE Income (
 CREATE TABLE IncomeCategory (
     income_category_id INT PRIMARY KEY,
     income_category_name VARCHAR(50) NOT NULL,
-    income_description VARCHAR(255)
+    income_category_description VARCHAR(255)
 );
 
 --Budget table
@@ -58,7 +58,7 @@ CREATE TABLE Budget (
  CREATE TABLE BudgetCategory (
     budget_category_id INT PRIMARY KEY,
     budget_category_name VARCHAR(50) NOT NULL,
-    budget_description VARCHAR(255),
+    budget_category_description VARCHAR(255),
 );
 
 --Goal table
