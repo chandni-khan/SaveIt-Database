@@ -32,7 +32,7 @@ CREATE TABLE Expense (
 CREATE TABLE Income (
    income_id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
    income_category VARCHAR(50),
-   income_description VARCHAR(255)
+   income_description VARCHAR(255),
    income DECIMAL(18,2) NOT NULL,
    income_date DATE NOT NULL,
    user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
