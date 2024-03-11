@@ -1,15 +1,10 @@
 USE dbsaveit;
 --User table
-CREATE TABLE [UserId] (
+CREATE TABLE [User] (
    user_id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-);
- 
- CREATE TABLE [UserDetail] (
-   user_detail_id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-   user_name VARCHAR(50) NOT NULL,
+     user_name VARCHAR(50) NOT NULL,
    email_id VARCHAR(50) NOT NULL,
-   mobile_no VARCHAR(15) NOT NULL,
-   user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
+   mobile_no VARCHAR(15) NOT NULL
 );
  
 ---Expense table
@@ -19,7 +14,7 @@ CREATE TABLE Expense (
    expense_description VARCHAR(255),
    spend_date DATE NOT NULL,
    amount_spended DECIMAL(18,2) NOT NULL,
-   user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
+   user_id INT FOREIGN KEY REFERENCES [User](user_id)
 );
 
  CREATE TABLE ExpenseCategory (
@@ -35,7 +30,7 @@ CREATE TABLE Income (
    income_description VARCHAR(255),
    income DECIMAL(18,2) NOT NULL,
    income_date DATE NOT NULL,
-   user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
+   user_id INT FOREIGN KEY REFERENCES [User](user_id)
 );
  
 CREATE TABLE IncomeCategory (
@@ -52,7 +47,7 @@ CREATE TABLE Budget (
    start_date DATE NOT NULL,
    end_date DATE NOT NULL,
    budget_description VARCHAR(255),
-   user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
+   user_id INT FOREIGN KEY REFERENCES [User](user_id)
 );
  
  CREATE TABLE BudgetCategory (
@@ -68,7 +63,7 @@ CREATE TABLE Goal (
    target_amount DECIMAL(18,2),
    desired_date DATE NOT NULL,
    saved_already DECIMAL(18,2) NOT NULL,
-   user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
+   user_id INT FOREIGN KEY REFERENCES [User](user_id)
 );
  
  
@@ -79,7 +74,7 @@ CREATE TABLE Reminder (
    reminder_description VARCHAR(255),
    remind_date DATE NOT NULL,
    due_date DATE NOT NULL,
-   user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
+   user_id INT FOREIGN KEY REFERENCES [User](user_id)
 );
 
 --Notification 
@@ -87,6 +82,6 @@ CREATE TABLE Alert (
    alert_id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
    alert_for VARCHAR(50) NOT NULL,
    alert_description VARCHAR(255),
-   user_id INT FOREIGN KEY REFERENCES [UserId](user_id)
+   user_id INT FOREIGN KEY REFERENCES [User](user_id)
 );
  
