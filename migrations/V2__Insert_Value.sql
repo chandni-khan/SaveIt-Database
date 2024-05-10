@@ -54,3 +54,19 @@ VALUES
 ( 16600.00, '2024-02-01', '2024-02-28', 66);
 
 
+INSERT INTO IncomeCategory (income_category_id, income_category_name, income_category_desc)
+VALUES
+(1, 'Salary', 'Regular income from employment'),
+(2, 'Freelance', 'Income from freelance work'),
+(3, 'Investments', 'Income from investments or dividends'),
+(4, 'Business', 'Income from business activities'),
+(5, 'Other', 'Other sources of income');
+
+-- Inserting sample data into the BudgetCategory table
+INSERT INTO BudgetCategory (budget_category_id, budget_category_name, budget_category_description)
+VALUES
+(1, 'Groceries', 'Expenses related to purchasing food items'),
+(2, 'Utilities', 'Expenses related to utility bills (electricity, water, etc.)'),
+(3, 'Housing', 'Expenses related to rent or mortgage payments'),
+(4, 'Transportation', 'Expenses related to transportation (fuel, public transport, etc.)'),
+(5, 'Entertainment', 'Expenses related to leisure and entertainment activities');
